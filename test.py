@@ -19,5 +19,3 @@ class GRRClient():
     def login(self):
         self.session.get(self.baseurl)
         xsrf_token = self.session.cookies.get('csrftoken')
-        self.session.headers.update({'x-csrftoken': xsrf_token,
-                                     'x-requested-with': 'XMLHttpRequest'})
